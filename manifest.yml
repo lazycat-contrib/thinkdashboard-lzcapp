@@ -1,0 +1,34 @@
+name: ThinkDashboard
+package: community.lazycat.app.thinkdashboard
+version: 0.2.0
+min_os_version: 1.3.8
+description: 支持键盘快捷键的轻量级、自托管书签仪表板
+homepage: https://github.com/MatiasDesuu/ThinkDashboard
+author: MatiasDesuu
+application:
+  subdomain: thinkdashboard
+  background_task: true
+  muti_instance: true
+
+  upstreams:
+    - location: /
+      backend: http://thinkdashboard:8080/
+
+services:
+  thinkdashboard:
+    container_name: thinkdashboard
+    #   ghcr.io/matiasdesuu/thinkdashboard:v0.2
+    image: registry.lazycat.cloud/czyt/matiasdesuu/thinkdashboard:ff4f9eeb9d2a3a19
+    user: root
+    environment:
+      - PORT=8080
+    binds:
+      - /lzcapp/var/data:/app/data
+
+locales:
+  zh:
+    name: "ThinkDashboard"
+    description: "支持键盘快捷键的轻量级、自托管书签仪表板"
+  en:
+    name: "ThinkDashboard"
+    description: "A lightweight, self-hosted bookmark dashboard with keyboard shortcuts."
