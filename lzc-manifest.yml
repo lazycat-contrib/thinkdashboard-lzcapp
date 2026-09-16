@@ -5,11 +5,10 @@ application:
   upstreams:
     - location: /
       backend: http://thinkdashboard:8080/
-
 services:
   thinkdashboard:
-    # upstream: ghcr.io/matiasdesuu/thinkdashboard:v0.2
-    image: ghcr.io/matiasdesuu/thinkdashboard:v0.2
+    # upstream: ghcr.io/matiasdesuu/thinkdashboard:v0.7.6
+    image: registry.lazycat.cloud/czyt/matiasdesuu/thinkdashboard:918bf7344082c368
     user: root
     environment:
       - PORT=8080

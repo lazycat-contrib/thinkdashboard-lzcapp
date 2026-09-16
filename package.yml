@@ -1,5 +1,5 @@
 package: community.lazycat.app.thinkdashboard
-version: 0.2.0
+version: 0.7.6
 name: ThinkDashboard
 description: "支持键盘快捷键的轻量级、自托管书签仪表板"
 min_os_version: "1.5.0"
