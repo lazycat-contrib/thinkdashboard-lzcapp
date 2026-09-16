@@ -1,0 +1,37 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/thinkdashboard.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: thinkdashboard
+build:
+  run_buildscript: false
+images:
+  - id: thinkdashboard
+    target: service
+    service: thinkdashboard
+    source: ghcr.io/matiasdesuu/thinkdashboard
+    channel: stable
+    sort: semver
+    tag_regex: '^v?\d+\.\d+\.\d+$'
+    delivery:
+      mode: lazycat
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    changelog_locales: [zh, en]
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: ThinkDashboard
+    summary: "支持键盘快捷键的轻量级、自托管书签仪表板"

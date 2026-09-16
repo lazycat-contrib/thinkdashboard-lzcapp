@@ -1,0 +1,17 @@
+application:
+  subdomain: thinkdashboard
+  background_task: true
+  multi_instance: true
+  upstreams:
+    - location: /
+      backend: http://thinkdashboard:8080/
+
+services:
+  thinkdashboard:
+    # upstream: ghcr.io/matiasdesuu/thinkdashboard:v0.2
+    image: ghcr.io/matiasdesuu/thinkdashboard:v0.2
+    user: root
+    environment:
+      - PORT=8080
+    binds:
+      - /lzcapp/var/data:/app/data

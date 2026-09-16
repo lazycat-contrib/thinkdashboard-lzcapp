@@ -1,0 +1,14 @@
+package: community.lazycat.app.thinkdashboard
+version: 0.2.0
+name: ThinkDashboard
+description: "支持键盘快捷键的轻量级、自托管书签仪表板"
+min_os_version: "1.5.0"
+homepage: https://github.com/MatiasDesuu/ThinkDashboard
+author: MatiasDesuu
+locales:
+  zh:
+    description: "支持键盘快捷键的轻量级、自托管书签仪表板"
+    name: ThinkDashboard
+  en:
+    description: "A lightweight, self-hosted bookmark dashboard with keyboard shortcuts."
+    name: ThinkDashboard
